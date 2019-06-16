@@ -14,48 +14,47 @@ import com.syntax.utils.ConfigsReader;
 
 public class LoginPageTest extends BaseClass {
 
-	@Test(groups="smoke")
-	public void loginToOrangeHRM() {
-		LoginPageWithoutPageFactory login=new LoginPageWithoutPageFactory();
-		
-		CommonMethods.sendText(login.username, "Admin");
-		CommonMethods.sendText(login.password, "06I@PjFbgM");
-		CommonMethods.click(login.btnLogin);
-		
-	}
-	
-	@Test(groups="smoke")
-	public void doLogin() {
-		LoginPage login=new LoginPage();
-		CommonMethods.sendText(login.userName, ConfigsReader.getProperty("username"));
-		CommonMethods.sendText(login.password, ConfigsReader.getProperty("password"));
-		CommonMethods.click(login.loginBtn);
-		
-		HomePage home=new HomePage();
-		boolean isDisplayed = home.dashboardText.isDisplayed();
-		
-		Assert.assertTrue(isDisplayed);
-		
-	}
+	 @Test(groups="smoke")
+	    public void loginToOrangeHRM() {
 
-	@Test(groups="regression")
-	public void negativeLogin1() {
-		LoginPage login=new LoginPage();
-		
-		login.login("admins", "test");
-		String errorText=login.message.getText();
-		
-		AssertJUnit.assertEquals(errorText, "Invalid Credentials");
-	}
+	        LoginPageWithoutPageFactory login=new LoginPageWithoutPageFactory();
+	        
+	        test.info("Logging in with valid credentials");
+	        
+	        CommonMethods.sendText(login.username, "Admin");
+	        CommonMethods.sendText(login.password, "Nfz@Qc2G6X");
+	        CommonMethods.click(login.btnLogin);
+	        
+	        test.info("Verifying dashboard text is displayed");
+	        
+	        HomePage home=new HomePage();
+	        boolean isDisplayed = home.dashboardText.isDisplayed();
+	        Assert.assertTrue(isDisplayed);
+	    }
+	    
+	    @Test(groups="smoke")
+	    public void doLogin() {
 
-	@Test
-	public void negativeLogin() {
-		
-		LoginPage login=new LoginPage();
-		
-		login.login("admins", "test");
-		String errorText=login.message.getText();
-		
-		Assert.assertEquals(errorText, "Invalid Credentials");
+	        LoginPage login=new LoginPage();
+	        
+	        test.info("Logging in with valid credentials");
+	        CommonMethods.sendText(login.userName, ConfigsReader.getProperty("username"));
+	        CommonMethods.sendText(login.password, ConfigsReader.getProperty("password"));
+	        CommonMethods.click(login.loginBtn);
+	        test.info("Verifying dashboard text is displayed");
+	        HomePage home=new HomePage();
+	        boolean isDisplayed = home.dashboardText.isDisplayed();
+	        Assert.assertTrue(true);
+	    }
+
+	    @Test(groups="regression")
+	    public void negativeLogin() {
+	        LoginPage login=new LoginPage();
+	        test.info("Logging in with In Valid credentials");
+	        login.login("admins", "test");
+	        
+	        String errorText=login.message.getText();
+	        test.info("Verifying error message "+errorText);
+	        Assert.assertEquals(errorText, "Invalid Credentials");
+	    }
 	}
-}

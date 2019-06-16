@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="7" total="7" passed="0">
+<testng-results skipped="0" failed="0" ignored="8" total="10" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression Suite" duration-ms="0" started-at="2019-06-15T19:27:37Z" finished-at="2019-06-15T19:27:37Z">
+  <suite name="Smoke Suite" duration-ms="15687" started-at="2019-06-16T18:10:42Z" finished-at="2019-06-16T18:10:58Z">
     <groups>
+      <group name="smoke">
+        <method signature="LoginPageTest.doLogin()[pri:0, instance:com.syntax.testcases.LoginPageTest@146ba0ac]" name="doLogin" class="com.syntax.testcases.LoginPageTest"/>
+        <method signature="LoginPageTest.loginToOrangeHRM()[pri:0, instance:com.syntax.testcases.LoginPageTest@146ba0ac]" name="loginToOrangeHRM" class="com.syntax.testcases.LoginPageTest"/>
+      </group> <!-- smoke -->
     </groups>
-    <test name="Regression Test" duration-ms="0" started-at="2019-06-15T19:27:37Z" finished-at="2019-06-15T19:27:37Z">
-    </test> <!-- Regression Test -->
-  </suite> <!-- Regression Suite -->
+    <test name="Smoke Test" duration-ms="15687" started-at="2019-06-16T18:10:42Z" finished-at="2019-06-16T18:10:58Z">
+      <class name="com.syntax.testcases.LoginPageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.syntax.testcases.LoginPageTest@146ba0ac]" name="setUp" is-config="true" duration-ms="4808" started-at="2019-06-16T18:10:43Z" finished-at="2019-06-16T18:10:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="doLogin()[pri:0, instance:com.syntax.testcases.LoginPageTest@146ba0ac]" name="doLogin" duration-ms="2556" started-at="2019-06-16T18:10:47Z" finished-at="2019-06-16T18:10:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.syntax.testcases.LoginPageTest@146ba0ac]" name="tearDown" is-config="true" duration-ms="615" started-at="2019-06-16T18:10:50Z" finished-at="2019-06-16T18:10:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.syntax.testcases.LoginPageTest@146ba0ac]" name="setUp" is-config="true" duration-ms="4254" started-at="2019-06-16T18:10:51Z" finished-at="2019-06-16T18:10:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginToOrangeHRM()[pri:0, instance:com.syntax.testcases.LoginPageTest@146ba0ac]" name="loginToOrangeHRM" duration-ms="2522" started-at="2019-06-16T18:10:55Z" finished-at="2019-06-16T18:10:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToOrangeHRM -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.syntax.testcases.LoginPageTest@146ba0ac]" name="tearDown" is-config="true" duration-ms="626" started-at="2019-06-16T18:10:57Z" finished-at="2019-06-16T18:10:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.syntax.testcases.LoginPageTest -->
+      <class name="com.syntax.testcases.AddEmployeePageTest">
+        <test-method status="PASS" signature="generateReport()[pri:0, instance:com.syntax.testcases.AddEmployeePageTest@4667ae56]" name="generateReport" is-config="true" duration-ms="116" started-at="2019-06-16T18:10:42Z" finished-at="2019-06-16T18:10:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateReport -->
+        <test-method status="PASS" signature="flushReport()[pri:0, instance:com.syntax.testcases.AddEmployeePageTest@4667ae56]" name="flushReport" is-config="true" duration-ms="172" started-at="2019-06-16T18:10:58Z" finished-at="2019-06-16T18:10:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flushReport -->
+      </class> <!-- com.syntax.testcases.AddEmployeePageTest -->
+    </test> <!-- Smoke Test -->
+  </suite> <!-- Smoke Suite -->
 </testng-results>

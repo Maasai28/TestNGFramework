@@ -221,16 +221,19 @@ public class CommonMethods extends BaseClass{
 		WebDriverWait wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-	public static void takeScreenshot(String folderName, String fileName) {
-		TakesScreenshot ts=(TakesScreenshot)driver;
-        File scr=ts.getScreenshotAs(OutputType.FILE);
-        
-        try {
-			FileUtils.copyFile(scr, new File("ScreenShots\\"+folderName+"\\"+fileName+".png"));
+	public static String takeScreenshot(String fileName) {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File scr = ts.getScreenshotAs(OutputType.FILE);
+
+		String dest=System.getProperty("user.dir")+"/target/screenshots/"+ fileName + ".png";
+		
+		try {
+			FileUtils.copyFile(scr, new File(dest));
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Unable to take screesnhot");
 		}
+		return dest;
 	}
 	
 	public static void scrollDown(int pixels) {
